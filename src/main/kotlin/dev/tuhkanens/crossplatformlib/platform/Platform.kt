@@ -2,8 +2,8 @@ package dev.tuhkanens.crossplatformlib.platform
 
 interface Platform {
 
-    fun setup(block: PlatformLoader.() -> Unit) {
-        val platform = PlatformLoader()
+    fun setup(block: PlatformSetup.() -> Unit) {
+        val platform = PlatformSetup()
         platform.block()
     }
 
