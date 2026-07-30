@@ -2,26 +2,30 @@ package dev.tuhkanens.crossplatformlib.api.implementation
 
 import com.alessiodp.libby.Library
 import com.alessiodp.libby.LibraryManager
-import dev.tuhkanens.crossplatformlib.CrossPlatformAPI
-import dev.tuhkanens.crossplatformlib.api.Libraries
+import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
 
-class LibrariesImpl : Libraries {
+class LibrariesImpl : LibrariesAPI {
 
     private lateinit var manager: LibraryManager
-    private var libraries: List<Library> = emptyList()
 
-    override fun setLibraries(manager: LibraryManager, libraries: List<Library>) {
+    private var customLibraries: List<Library> = emptyList()
+    private var standardLibraries: List<Library> = emptyList()
+
+    override fun setCustomLibraries(manager: LibraryManager, libraries: List<Library>) {
         this.manager = manager
-        this.libraries = libraries
+        this.customLibraries = libraries
     }
 
-    override fun getLibraries(): List<Library> {
-        return libraries
+    override fun getCustomLibraries(): List<Library> {
+        return customLibraries
+    }
+
+    override fun setStandardLibraries(libraries: List<Library>) {
+        this.standardLibraries = libraries
     }
 
     override fun loadLibraries() {
-        val standardLibraries = CrossPlatformAPI.getAPI<StandardLibrariesImpl>().getLibraries()
-        manager.loadLibraries(*standardLibraries.toTypedArray(), *libraries.toTypedArray())
+        manager.loadLibraries(*standardLibraries.toTypedArray(), *customLibraries.toTypedArray())
     }
 
 }

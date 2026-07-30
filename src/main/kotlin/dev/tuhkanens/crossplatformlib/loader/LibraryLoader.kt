@@ -3,7 +3,7 @@ package dev.tuhkanens.crossplatformlib.loader
 import com.alessiodp.libby.Library
 import com.alessiodp.libby.LibraryManager
 import dev.tuhkanens.crossplatformlib.CrossPlatformAPI
-import dev.tuhkanens.crossplatformlib.api.Libraries
+import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
 
 abstract class LibraryLoader {
 
@@ -11,8 +11,10 @@ abstract class LibraryLoader {
     abstract val libraries: List<Library>
 
     init {
-        CrossPlatformAPI.getAPI<Libraries>().setLibraries(manager, libraries)
-        CrossPlatformAPI.getAPI<Libraries>().loadLibraries()
+        CrossPlatformAPI.getAPI<LibrariesAPI>().apply {
+            setCustomLibraries(manager, libraries)
+            loadLibraries()
+        }
     }
 
 }

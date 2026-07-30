@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     compileOnly("net.flectone:libby-core:2.0.0")
+    compileOnly("org.slf4j:slf4j-api:2.0.18")
 }
 
 kotlin {
