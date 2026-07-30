@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.4.0"
+    `maven-publish`
 }
 
 group = "dev.tuhkanens.crossplatformlib"
@@ -15,4 +16,12 @@ dependencies {
 
 kotlin {
     jvmToolchain(21)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
 }
