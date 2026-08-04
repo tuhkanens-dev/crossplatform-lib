@@ -2,6 +2,7 @@ package dev.tuhkanens.crossplatformlib.api.implementation
 
 import com.alessiodp.libby.Library
 import com.alessiodp.libby.LibraryManager
+import com.alessiodp.libby.Repositories
 import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
 
 class LibrariesImpl : LibrariesAPI {
