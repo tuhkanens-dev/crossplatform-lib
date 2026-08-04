@@ -8,8 +8,11 @@ import dev.tuhkanens.crossplatformlib.loader.PlatformLoader
 
 class CrossPlatformSetup {
 
+    // For future
+    private lateinit var platformLoader: PlatformLoader
+
     fun setPlatform(loader: PlatformLoader) {
-        CrossPlatformAPI.registerAPI<PlatformAPI>(loader)
+        platformLoader = loader
     }
 
     fun loadLibraries(loader: LibraryLoader) {
