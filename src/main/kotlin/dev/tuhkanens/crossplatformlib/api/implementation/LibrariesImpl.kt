@@ -28,8 +28,7 @@ class LibrariesImpl : LibrariesAPI {
         return standardLibraries
     }
 
-    override fun loadLibraries(standardLibraries: List<Library>) {
-        setStandardLibraries(standardLibraries)
+    override fun loadLibraries() {
         manager.loadLibraries(*standardLibraries.toTypedArray(), *customLibraries.toTypedArray())
     }
 

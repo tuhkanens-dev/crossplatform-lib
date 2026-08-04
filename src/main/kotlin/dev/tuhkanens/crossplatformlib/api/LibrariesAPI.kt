@@ -8,5 +8,5 @@ interface LibrariesAPI {
     fun getCustomLibraries(): List<Library>
     fun setStandardLibraries(standardLibraries: List<Library>)
     fun getStandardLibraries(): List<Library>
-    fun loadLibraries(standardLibraries: List<Library>)
+    fun loadLibraries()
 }
