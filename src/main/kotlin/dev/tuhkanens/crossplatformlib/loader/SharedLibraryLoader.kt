@@ -7,11 +7,11 @@ import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
 
 abstract class SharedLibraryLoader {
 
-    abstract val libraries: List<Library>
+    abstract val standardLibraries: List<Library>
 
     open fun setLibraries(libraries: List<Library>) {
         CrossPlatformAPI.getAPI<LibrariesAPI>().setStandardLibraries(libraries)
     }
-    open fun getLibraries(): List<Library> = libraries
+    open fun getLibraries(): List<Library> = standardLibraries
 
 }
