@@ -12,7 +12,7 @@ abstract class LibraryLoader {
     abstract val libraries: List<Library>
     abstract val repositories: List<String>
 
-    init {
+    open fun load() {
         manager.addMavenCentral()
 
         for (repository in repositories) {

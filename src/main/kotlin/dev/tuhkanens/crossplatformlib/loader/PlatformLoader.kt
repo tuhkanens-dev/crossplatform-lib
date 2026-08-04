@@ -10,7 +10,7 @@ abstract class PlatformLoader {
     abstract fun getLogger(): Logger
     abstract fun getDirectory(): Path
 
-    init {
+    fun load() {
         CrossPlatformAPI.registerAPI<PlatformAPI>(this)
     }
 
