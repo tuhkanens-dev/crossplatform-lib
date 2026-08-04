@@ -10,8 +10,4 @@ abstract class LibraryLoader {
     abstract val manager: LibraryManager
     abstract val libraries: List<Library>
 
-    init {
-        CrossPlatformAPI.getAPI<LibrariesAPI>().setCustomLibraries(manager, libraries)
-    }
-
 }

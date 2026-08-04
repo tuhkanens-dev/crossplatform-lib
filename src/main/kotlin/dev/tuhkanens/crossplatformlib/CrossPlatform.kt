@@ -1,9 +1,8 @@
 package dev.tuhkanens.crossplatformlib
 
 import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
-import dev.tuhkanens.crossplatformlib.api.PlatformAPI
 import dev.tuhkanens.crossplatformlib.api.implementation.LibrariesImpl
-import dev.tuhkanens.crossplatformlib.loader.PlatformLoader
+import dev.tuhkanens.crossplatformlib.setup.CrossPlatformSetup
 
 object CrossPlatform {
 
@@ -11,8 +10,9 @@ object CrossPlatform {
         CrossPlatformAPI.registerAPI<LibrariesAPI>(LibrariesImpl())
     }
 
-    fun setPlatform(loader: PlatformLoader) {
-        CrossPlatformAPI.registerAPI<PlatformAPI>(loader)
+    fun setup(block: CrossPlatformSetup.() -> Unit) {
+        val crossPlatform = CrossPlatformSetup()
+        crossPlatform.block()
     }
 
 }
