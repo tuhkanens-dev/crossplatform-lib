@@ -1,7 +1,6 @@
 package dev.tuhkanens.crossplatformlib.loader
 
 import com.alessiodp.libby.Library
-import dev.tuhkanens.crossplatformlib.CrossPlatform
 import dev.tuhkanens.crossplatformlib.CrossPlatformAPI
 import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
 
