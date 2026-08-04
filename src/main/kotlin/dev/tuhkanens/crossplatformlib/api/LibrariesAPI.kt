@@ -6,6 +6,7 @@ import com.alessiodp.libby.LibraryManager
 interface LibrariesAPI {
     fun setCustomLibraries(manager: LibraryManager, libraries: List<Library>)
     fun getCustomLibraries(): List<Library>
-    fun setStandardLibraries(libraries: List<Library>)
-    fun loadLibraries()
+    fun setStandardLibraries(standardLibraries: List<Library>)
+    fun getStandardLibraries(): List<Library>
+    fun loadLibraries(standardLibraries: List<Library>)
 }
