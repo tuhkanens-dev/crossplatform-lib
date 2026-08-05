@@ -16,7 +16,7 @@ class CrossPlatformSetup {
         loader.load()
 
         CrossPlatformAPI.getAPI<LibraryAPI>().apply {
-            setCustomLibraries(loader.manager, loader.libraries)
+            setPlatformLibraries(loader.manager, loader.libraries)
             loadLibraries()
         }
     }
