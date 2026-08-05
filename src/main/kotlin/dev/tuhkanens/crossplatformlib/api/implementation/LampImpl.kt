@@ -2,7 +2,6 @@ package dev.tuhkanens.crossplatformlib.api.implementation
 
 import dev.tuhkanens.crossplatformlib.api.LampAPI
 import dev.tuhkanens.crossplatformlib.loader.LampLoader
-import revxrsal.commands.command.ExecutableCommand
 
 internal class LampImpl : LampAPI {
 
@@ -20,7 +19,7 @@ internal class LampImpl : LampAPI {
         return ::loader.isInitialized
     }
 
-    override fun registerCommands(instances: ExecutableCommand<*>) = with (loader) {
+    override fun registerCommands(vararg instances: Any) = with (loader) {
         if (!hasLoader()) return@with
         lamp.register(instances)
         applyLampVisitors()
