@@ -4,7 +4,7 @@ import revxrsal.commands.autocomplete.SuggestionProvider
 import revxrsal.commands.command.CommandActor
 import revxrsal.commands.node.ExecutionContext
 
-class PlayerNameSuggester<A : CommandActor>(
+class PlayerSuggester<A : CommandActor>(
     private val players: () -> List<String>
 ) : SuggestionProvider<A> {
 
