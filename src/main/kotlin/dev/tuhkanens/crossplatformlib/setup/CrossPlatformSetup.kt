@@ -1,7 +1,7 @@
 package dev.tuhkanens.crossplatformlib.setup
 
 import dev.tuhkanens.crossplatformlib.CrossPlatformAPI
-import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
+import dev.tuhkanens.crossplatformlib.api.LibraryAPI
 import dev.tuhkanens.crossplatformlib.api.PlatformAPI
 import dev.tuhkanens.crossplatformlib.loader.LibraryLoader
 import dev.tuhkanens.crossplatformlib.loader.PlatformLoader
@@ -14,7 +14,8 @@ class CrossPlatformSetup {
 
     fun loadLibraries(loader: LibraryLoader) {
         loader.load()
-        CrossPlatformAPI.getAPI<LibrariesAPI>().apply {
+
+        CrossPlatformAPI.getAPI<LibraryAPI>().apply {
             setCustomLibraries(loader.manager, loader.libraries)
             loadLibraries()
         }

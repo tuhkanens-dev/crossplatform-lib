@@ -4,7 +4,8 @@ import java.util.concurrent.ConcurrentHashMap
 
 object CrossPlatformAPI {
 
-    val registry: ConcurrentHashMap<Class<*>, Any> = ConcurrentHashMap()
+    @PublishedApi
+    internal val registry: ConcurrentHashMap<Class<*>, Any> = ConcurrentHashMap()
 
     inline fun <reified T> registerAPI(implementation: Any) {
         registry[T::class.java] = implementation

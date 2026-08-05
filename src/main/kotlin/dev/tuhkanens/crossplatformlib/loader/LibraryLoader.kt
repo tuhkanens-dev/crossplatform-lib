@@ -2,9 +2,6 @@ package dev.tuhkanens.crossplatformlib.loader
 
 import com.alessiodp.libby.Library
 import com.alessiodp.libby.LibraryManager
-import com.alessiodp.libby.Repositories
-import dev.tuhkanens.crossplatformlib.CrossPlatformAPI
-import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
 
 abstract class LibraryLoader {
 
@@ -12,7 +9,7 @@ abstract class LibraryLoader {
     abstract val libraries: List<Library>
     abstract val repositories: List<String>
 
-    open fun load() {
+    fun load() {
         manager.addMavenCentral()
 
         for (repository in repositories) {

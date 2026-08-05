@@ -1,16 +1,21 @@
 package dev.tuhkanens.crossplatformlib
 
-import dev.tuhkanens.crossplatformlib.api.LibrariesAPI
-import dev.tuhkanens.crossplatformlib.api.implementation.LibrariesImpl
+import dev.tuhkanens.crossplatformlib.api.LampAPI
+import dev.tuhkanens.crossplatformlib.api.LibraryAPI
+import dev.tuhkanens.crossplatformlib.api.implementation.LampImpl
+import dev.tuhkanens.crossplatformlib.api.implementation.LibraryImpl
 import dev.tuhkanens.crossplatformlib.setup.CrossPlatformSetup
 
 object CrossPlatform {
 
     fun onLoad() {
-        CrossPlatformAPI.registerAPI<LibrariesAPI>(LibrariesImpl())
+        CrossPlatformAPI.apply {
+            registerAPI<LibraryAPI>(LibraryImpl())
+            registerAPI<LampAPI>(LampImpl())
+        }
     }
 
-    fun setup(block: CrossPlatformSetup.() -> Unit) {
+    fun onSetup(block: CrossPlatformSetup.() -> Unit) {
         val crossPlatform = CrossPlatformSetup()
         crossPlatform.block()
     }
