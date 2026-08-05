@@ -21,9 +21,9 @@ internal class LampImpl : LampAPI {
 
     override fun registerCommands(vararg instances: Any) = with (loader) {
         if (!hasLoader()) return@with
-        lamp.register(instances)
-        applyLampVisitors()
         applyBuilderVisitors()
+        lamp.register(*instances)
+        applyLampVisitors()
     }
 
 }
