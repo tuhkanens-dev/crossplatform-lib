@@ -1,5 +1,5 @@
 package dev.tuhkanens.crossplatformlib.api
 
 interface SchedulerAPI {
-    fun setSyncExecutor(executor: (() -> Unit) -> Unit)
+    fun getSyncExecutor(executor: (() -> Unit) -> Unit)
 }
