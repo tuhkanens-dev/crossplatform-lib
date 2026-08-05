@@ -12,7 +12,7 @@ abstract class SchedulerLoader : SchedulerAPI {
         syncExecutor = executor
     }
 
-    override fun runAsync(task: () -> Unit) {
+    override fun runSync(task: () -> Unit) {
         if (!::syncExecutor.isInitialized) return
         syncExecutor(task)
     }
