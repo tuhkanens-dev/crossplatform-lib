@@ -12,7 +12,7 @@ abstract class LampLoader<A : CommandActor> {
     open val lampVisitors: List<LampVisitor<A>> = emptyList()
     open val builderVisitors: List<LampBuilderVisitor<A>> = emptyList()
 
-    val lamp: Lamp<A> = builder.build()
+    val lamp: Lamp<A> by lazy { builder.build() }
 
     fun applyLampVisitors() {
         lampVisitors.forEach(lamp::accept)
