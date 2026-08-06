@@ -4,10 +4,8 @@ import com.alessiodp.libby.Library
 import dev.tuhkanens.crossplatformlib.CrossAPI
 import dev.tuhkanens.crossplatformlib.api.LampAPI
 import dev.tuhkanens.crossplatformlib.api.LibraryAPI
-import dev.tuhkanens.crossplatformlib.api.PlatformTypeAPI
 import dev.tuhkanens.crossplatformlib.api.implementation.LampImpl
 import dev.tuhkanens.crossplatformlib.api.implementation.LibraryImpl
-import dev.tuhkanens.crossplatformlib.api.implementation.PlatformTypeImpl
 
 abstract class SharedBootstrap {
 
@@ -17,7 +15,6 @@ abstract class SharedBootstrap {
         CrossAPI.apply {
             registerAPI<LibraryAPI>(LibraryImpl())
             registerAPI<LampAPI>(LampImpl())
-            registerAPI<PlatformTypeAPI>(PlatformTypeImpl())
         }
 
         val libraries = sharedLibraries()
