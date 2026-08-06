@@ -1,27 +1,26 @@
 package dev.tuhkanens.crossplatformlib.setup
 
-import dev.tuhkanens.crossplatformlib.CrossPlatformAPI
+import dev.tuhkanens.crossplatformlib.CrossAPI
 import dev.tuhkanens.crossplatformlib.api.LibraryAPI
 import dev.tuhkanens.crossplatformlib.api.PlatformAPI
 import dev.tuhkanens.crossplatformlib.api.SchedulerAPI
-import dev.tuhkanens.crossplatformlib.loader.LibraryLoader
-import dev.tuhkanens.crossplatformlib.loader.PlatformLoader
-import dev.tuhkanens.crossplatformlib.loader.SchedulerLoader
+import dev.tuhkanens.crossplatformlib.bootstrap.LibraryBootstrap
+import dev.tuhkanens.crossplatformlib.bootstrap.PlatformBoostrap
+import dev.tuhkanens.crossplatformlib.bootstrap.SchedulerBoostrap
 
 class CrossPlatformSetup {
 
-    fun setPlatform(loader: PlatformLoader) {
-        CrossPlatformAPI.registerAPI<PlatformAPI>(loader)
+    fun setPlatform(loader: PlatformBoostrap) {
+        CrossAPI.registerAPI<PlatformAPI>(loader)
     }
 
-    fun setScheduler(loader: SchedulerLoader) {
-        CrossPlatformAPI.registerAPI<SchedulerAPI>(loader)
+    fun setScheduler(loader: SchedulerBoostrap) {
+        CrossAPI.registerAPI<SchedulerAPI>(loader)
     }
 
-    fun loadLibraries(loader: LibraryLoader) {
+    fun setLibraries(loader: LibraryBootstrap) {
         loader.load()
-
-        CrossPlatformAPI.getAPI<LibraryAPI>().apply {
+        CrossAPI.getAPI<LibraryAPI>().apply {
             setPlatformLibraries(loader.manager, loader.libraries)
             loadLibraries()
         }

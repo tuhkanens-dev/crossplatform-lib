@@ -1,18 +1,18 @@
 package dev.tuhkanens.crossplatformlib.api.implementation
 
 import dev.tuhkanens.crossplatformlib.api.LampAPI
-import dev.tuhkanens.crossplatformlib.loader.LampLoader
+import dev.tuhkanens.crossplatformlib.bootstrap.LampBootstrap
 
 internal class LampImpl : LampAPI {
 
-    private lateinit var loader: LampLoader<*>
+    private lateinit var loader: LampBootstrap<*>
 
-    override fun getLoader(): LampLoader<*>? {
-        return if (hasLoader()) loader else null
+    override fun getLoader(): LampBootstrap<*>? {
+        return if (hasLoader()) bootstrap else null
     }
 
-    override fun setLoader(loader: LampLoader<*>) {
-        this.loader = loader
+    override fun setLoader(loader: LampBootstrap<*>) {
+        this.bootstrap = bootstrap
     }
 
     override fun hasLoader(): Boolean {

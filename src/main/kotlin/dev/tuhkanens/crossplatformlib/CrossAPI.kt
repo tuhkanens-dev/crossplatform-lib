@@ -2,7 +2,7 @@ package dev.tuhkanens.crossplatformlib
 
 import java.util.concurrent.ConcurrentHashMap
 
-object CrossPlatformAPI {
+object CrossAPI {
 
     @PublishedApi
     internal val registry: ConcurrentHashMap<Class<*>, Any> = ConcurrentHashMap()

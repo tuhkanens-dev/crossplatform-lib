@@ -1,11 +1,11 @@
-package dev.tuhkanens.crossplatformlib.loader
+package dev.tuhkanens.crossplatformlib.bootstrap
 
 import revxrsal.commands.Lamp
 import revxrsal.commands.LampBuilderVisitor
 import revxrsal.commands.LampVisitor
 import revxrsal.commands.command.CommandActor
 
-abstract class LampLoader<A : CommandActor> {
+abstract class LampBootstrap<A : CommandActor> {
 
     abstract val builder: Lamp.Builder<A>
 

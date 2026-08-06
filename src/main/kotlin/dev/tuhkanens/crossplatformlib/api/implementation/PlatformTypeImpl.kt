@@ -20,7 +20,7 @@ class PlatformTypeImpl : PlatformTypeAPI {
         return when {
             hasClass("io.papermc.paper.threadedregions.RegionizedServer") -> PlatformType.FOLIA
             hasClass("com.velocitypowered.api.proxy.ProxyServer") -> PlatformType.VELOCITY
-            hasClass("net.fabricmc.loader.api.FabricLoader") -> PlatformType.FABRIC
+            hasClass("net.fabricmc.bootstrap.api.FabricLoader") -> PlatformType.FABRIC
             hasClass("org.spongepowered.api.Sponge") -> PlatformType.SPONGE
             hasClass("com.destroystokyo.paper.PaperConfig") || hasClass("io.papermc.paper.configuration.PaperConfigurations") -> PlatformType.PAPER
             hasClass("org.spigotmc.SpigotConfig") -> PlatformType.SPIGOT

@@ -1,8 +1,8 @@
-package dev.tuhkanens.crossplatformlib.loader
+package dev.tuhkanens.crossplatformlib.bootstrap
 
 import dev.tuhkanens.crossplatformlib.api.SchedulerAPI
 
-abstract class SchedulerLoader : SchedulerAPI {
+abstract class SchedulerBoostrap : SchedulerAPI {
 
     private lateinit var syncExecutor: (() -> Unit) -> Unit
     private lateinit var asyncExecutor: (() -> Unit) -> Unit
