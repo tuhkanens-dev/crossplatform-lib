@@ -7,7 +7,8 @@ abstract class LibraryBootstrap {
 
     abstract val manager: LibraryManager
     abstract val libraries: List<Library>
-    abstract val repositories: List<String>
+
+    open val repositories: List<String> = emptyList()
 
     fun load() {
         manager.addMavenCentral()

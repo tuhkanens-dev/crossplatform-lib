@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.tuhkanens.crossplatformlib"
-version = "2.5.1"
+version = "2.5.2"
 
 repositories {
     mavenCentral()
