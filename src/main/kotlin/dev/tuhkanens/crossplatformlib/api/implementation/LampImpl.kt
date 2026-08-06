@@ -5,22 +5,22 @@ import dev.tuhkanens.crossplatformlib.bootstrap.LampBootstrap
 
 internal class LampImpl : LampAPI {
 
-    private lateinit var loader: LampBootstrap<*>
+    private lateinit var bootstrap: LampBootstrap<*>
 
-    override fun getLoader(): LampBootstrap<*>? {
-        return if (hasLoader()) bootstrap else null
+    override fun getBootstrap(): LampBootstrap<*>? {
+        return if (hasBootstrap()) bootstrap else null
     }
 
-    override fun setLoader(loader: LampBootstrap<*>) {
+    override fun setBootstrap(bootstrap: LampBootstrap<*>) {
         this.bootstrap = bootstrap
     }
 
-    override fun hasLoader(): Boolean {
-        return ::loader.isInitialized
+    override fun hasBootstrap(): Boolean {
+        return ::bootstrap.isInitialized
     }
 
-    override fun registerCommands(vararg instances: Any) = with (loader) {
-        if (!hasLoader()) return@with
+    override fun registerCommands(vararg instances: Any) = with (bootstrap) {
+        if (!hasBootstrap()) return@with
         applyBuilderVisitors()
         lamp.register(*instances)
         applyLampVisitors()
