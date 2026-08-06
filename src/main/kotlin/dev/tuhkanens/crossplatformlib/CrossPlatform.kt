@@ -2,8 +2,10 @@ package dev.tuhkanens.crossplatformlib
 
 import dev.tuhkanens.crossplatformlib.api.LampAPI
 import dev.tuhkanens.crossplatformlib.api.LibraryAPI
+import dev.tuhkanens.crossplatformlib.api.PlatformTypeAPI
 import dev.tuhkanens.crossplatformlib.api.implementation.LampImpl
 import dev.tuhkanens.crossplatformlib.api.implementation.LibraryImpl
+import dev.tuhkanens.crossplatformlib.api.implementation.PlatformTypeImpl
 import dev.tuhkanens.crossplatformlib.setup.CrossPlatformSetup
 
 object CrossPlatform {
@@ -12,6 +14,7 @@ object CrossPlatform {
         CrossPlatformAPI.apply {
             registerAPI<LibraryAPI>(LibraryImpl())
             registerAPI<LampAPI>(LampImpl())
+            registerAPI<PlatformTypeAPI>(PlatformTypeImpl())
         }
     }
 
