@@ -5,6 +5,7 @@ import org.slf4j.Logger
 import java.nio.file.Path
 
 interface PlatformAPI {
+    fun getInstance(): Class<*>
     fun getLogger(): Logger
     fun getDirectory(): Path
     fun getType(): PlatformType

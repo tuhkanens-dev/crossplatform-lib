@@ -7,6 +7,7 @@ import java.nio.file.Path
 
 abstract class PlatformBootstrap : PlatformAPI {
 
+    abstract override fun getInstance(): Class<*>
     abstract override fun getLogger(): Logger
     abstract override fun getDirectory(): Path
 
