@@ -8,6 +8,7 @@ version = "2.8.0"
 
 repositories {
     mavenCentral()
+    maven("https://jitpack.io")
 }
 
 dependencies {
