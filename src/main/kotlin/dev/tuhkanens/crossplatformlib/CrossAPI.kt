@@ -1,3 +1,3 @@
 package dev.tuhkanens.crossplatformlib
 
-object CrossAPI : CrossOwnAPI()
+object CrossAPI : API()
