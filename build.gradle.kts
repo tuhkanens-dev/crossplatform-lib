@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.tuhkanens.crossplatformlib"
-version = "2.9.0"
+version = "2.10.0"
 
 repositories {
     mavenCentral()
@@ -15,7 +15,6 @@ dependencies {
     compileOnly("net.flectone:libby-core:2.0.0")
     compileOnly("org.slf4j:slf4j-api:2.0.18")
     compileOnly("io.github.revxrsal:lamp.common:4.0.0-rc.17")
-    compileOnly("com.github.tuhkanens-dev:comfort-lib:1.2.1")
 }
 
 kotlin {

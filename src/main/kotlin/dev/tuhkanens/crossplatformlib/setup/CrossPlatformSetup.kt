@@ -13,20 +13,20 @@ import dev.tuhkanens.crossplatformlib.bootstrap.SchedulerBootstrap
 class CrossPlatformSetup {
 
     fun setPlatform(bootstrap: PlatformBootstrap) {
-        CrossAPI.registerAPI<PlatformAPI>(bootstrap)
+        CrossAPI.register<PlatformAPI>(bootstrap)
     }
 
     fun setScheduler(bootstrap: SchedulerBootstrap) {
-        CrossAPI.registerAPI<SchedulerAPI>(bootstrap)
+        CrossAPI.register<SchedulerAPI>(bootstrap)
     }
 
     fun setLamp(bootstrap: LampBootstrap<*>) {
-        CrossAPI.getAPI<LampAPI>().setBootstrap(bootstrap)
+        CrossAPI.get<LampAPI>().setBootstrap(bootstrap)
     }
 
     fun setLibraries(bootstrap: LibraryBootstrap) {
         bootstrap.load()
-        CrossAPI.getAPI<LibraryAPI>().apply {
+        CrossAPI.get<LibraryAPI>().apply {
             setPlatformLibraries(bootstrap.manager, bootstrap.libraries)
             loadLibraries()
         }

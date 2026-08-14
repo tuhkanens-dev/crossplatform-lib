@@ -13,13 +13,13 @@ abstract class SharedBootstrap {
 
     open fun onLoad() {
         CrossAPI.apply {
-            registerAPI<LibraryAPI>(LibraryImpl())
-            registerAPI<LampAPI>(LampImpl())
+            register<LibraryAPI>(LibraryImpl())
+            register<LampAPI>(LampImpl())
         }
 
         val libraries = sharedLibraries()
         if (libraries.isNotEmpty()) {
-            CrossAPI.getAPI<LibraryAPI>().setStandardLibraries(libraries)
+            CrossAPI.get<LibraryAPI>().setStandardLibraries(libraries)
         }
     }
 

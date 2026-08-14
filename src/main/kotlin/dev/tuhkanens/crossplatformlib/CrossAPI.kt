@@ -1,5 +1,20 @@
 package dev.tuhkanens.crossplatformlib
 
-import dev.tuhkanens.comfortlib.comfort.API
+import java.util.concurrent.ConcurrentHashMap
 
-object CrossAPI : API()
+object CrossAPI {
+
+    @PublishedApi
+    internal val registry: ConcurrentHashMap<Class<*>, Any> = ConcurrentHashMap()
+
+    inline fun <reified T : Any> register(implementation: Any) {
+        registry[T::class.java] = implementation
+    }
+
+    inline fun <reified T : Any> get(): T {
+        val implementation = registry[T::class.java]
+            ?: throw IllegalStateException("API '${T::class.java}' is not registered")
+        return implementation as T
+    }
+
+}
