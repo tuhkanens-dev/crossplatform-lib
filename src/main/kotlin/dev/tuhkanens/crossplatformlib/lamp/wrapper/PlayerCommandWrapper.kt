@@ -1,5 +1,6 @@
 package dev.tuhkanens.crossplatformlib.lamp.wrapper
 
+import java.nio.charset.StandardCharsets
 import java.util.UUID
 
 object PlayerCommandWrapper {
@@ -8,6 +9,10 @@ object PlayerCommandWrapper {
 
     fun isPlayer(uuid: UUID): Boolean {
         return uuid != consoleUuid
+    }
+
+    fun getOfflineUUID(playerName: String): UUID {
+        return UUID.nameUUIDFromBytes("OfflinePlayer:$playerName".toByteArray(StandardCharsets.UTF_8))
     }
 
 }
